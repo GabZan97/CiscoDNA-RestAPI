@@ -39,7 +39,7 @@ if __name__ == "__main__":
     interfacesList = interfaces.getDeviceInterfaces(token, id)
     interfaces.printInterfaceInfo(interfacesList)
 
-
+    """
     input("Premere Invio per eseguire Flow Analysis tra due indirizzi IP di test")
     source_ip = "10.10.22.98"
     destination_ip = "10.10.22.114"
@@ -53,5 +53,6 @@ if __name__ == "__main__":
 
     # Stampa i dettagli dell'analisi
     flow_analysis.printFlowDetails(flow, token)
+    """
 
-    print("Trial Version, Demo terminata!")
+    print("\n\nTrial Version, Demo terminata!")
