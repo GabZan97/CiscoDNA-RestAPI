@@ -47,9 +47,9 @@ if __name__ == "__main__":
     print("IP Destinazione: ", destination_ip)
 
     # Esegue la Flow Analysis tra i due indirizzi
-    flow = flow_analysis.run_flow_analysis(token, source_ip, destination_ip)
+    flow = flow_analysis.runFlowAnalysis(token, source_ip, destination_ip)
 
     # Stampa i dettagli dell'analisi
-    flow_analysis.print_flow_analysis_details(flow, token)
+    flow_analysis.printFlowDetails(flow, token)
 
     print("Trial Version, Demo terminata!")

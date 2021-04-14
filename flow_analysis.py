@@ -10,7 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 headers = {'content-type': "application/json", 'x-auth-token': ""}
 
 
-def print_interface_details(interface):
+def printInterfaceDetails(interface):
     """
     Stampa i dettagli di un interfaccia
     """
@@ -28,7 +28,7 @@ def print_interface_details(interface):
     print("")
 
 
-def run_flow_analysis(token, source_ip, destination_ip):
+def runFlowAnalysis(token, source_ip, destination_ip):
     """
     Crea ed invia la richiesta di POST per eseguire la Flow Analysis tra due indirizzi
     """
@@ -58,7 +58,7 @@ def run_flow_analysis(token, source_ip, destination_ip):
     return detail_response.json()["response"]
 
 
-def print_flow_analysis_details(flow_analysis, token):
+def printFlowDetails(flow_analysis, token):
     """
     Stampa i dettagli della flow analysis
     """
@@ -95,11 +95,11 @@ def print_flow_analysis_details(flow_analysis, token):
         print("Interfaccia d'Ingresso")
         print("-" * 20)
         ingress = interfaces.getInterfaceDetails(token, hop["ingressInterface"]["physicalInterface"]["id"])
-        print_interface_details(ingress)
+        printInterfaceDetails(ingress)
         print("Interfaccia d'Uscita")
         print("-" * 20)
         egress = interfaces.getInterfaceDetails(token, hop["egressInterface"]["physicalInterface"]["id"])
-        print_interface_details(egress)
+        printInterfaceDetails(egress)
 
         if(i < len(hops) - 2):
             input("Premere Invio per mostrare l'Hop successivo \n")

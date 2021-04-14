@@ -1,6 +1,6 @@
 import requests
 from requests.auth import HTTPBasicAuth
-from dnac_config import USERNAME, PASSWORD
+from config import USERNAME, PASSWORD
 
 requests.packages.urllib3.disable_warnings()
 
