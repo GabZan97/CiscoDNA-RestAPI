@@ -17,6 +17,16 @@ def getDeviceInterfaces(token, id):
 
     return interfaces_info
 
+def getInterfaceDetails(token, id):
+    """
+    Crea ed invia la richiesta di GET per ottenere il dettaglio di un interfaccia
+    """
+    url = "https://sandboxdnac.cisco.com/api/v1/interface/{}".format(id)
+    header = {'x-auth-token': token, 'content-type': 'application/json'}
+
+    response = requests.request("GET", url, headers=header, verify=False)
+    return response.json()["response"]
+
 
 def printInterfaceInfo(interfacesList):
     """
