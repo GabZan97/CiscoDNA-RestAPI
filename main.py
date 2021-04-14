@@ -40,9 +40,11 @@ if __name__ == "__main__":
     interfaces.printInterfaceInfo(interfacesList)
 
 
-    print("Premere Invio per eseguire Flow Analysis tra due indirizzi IP di test")
+    input("Premere Invio per eseguire Flow Analysis tra due indirizzi IP di test")
     source_ip = "10.10.22.98"
     destination_ip = "10.10.22.114"
+    # source_ip = input("Inserire l'IP Sorgente: ")
+    # destination_ip = input("Inserire l'IP Destinazione: ")
     print("IP Sorgente: ", source_ip)
     print("IP Destinazione: ", destination_ip)
 

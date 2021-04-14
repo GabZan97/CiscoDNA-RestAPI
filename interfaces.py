@@ -10,7 +10,7 @@ def getDeviceInterfaces(token, id):
     # Crea l'header per la richiesta GET contenente il token di autorizzazione
     header = {'x-auth-token': token, 'content-type': 'application/json'}
     # Crea il parametro aggiuntivo di ricerca tramite ID
-    querystring = {"macAddress": id}
+    querystring = {"id": id}
     # Effettua la richiesta di GET e ottiene lo stato delle interfacce del device richiesto
     response = requests.get(url, headers=header, params=querystring)
     interfaces_info = response.json()
@@ -30,7 +30,7 @@ def getInterfaceDetails(token, id):
 
 def printInterfaceInfo(interfacesList):
     """
-    Funzione rubata per stampare bene la lista di interfacce
+    Stampa in modo fancy la lista di interfacce
     """
     print("{0:42}{1:17}{2:12}{3:18}{4:17}{5:10}{6:15}".
           format("portName", "vlanId", "portMode", "portType", "duplex", "status", "lastUpdated"))
